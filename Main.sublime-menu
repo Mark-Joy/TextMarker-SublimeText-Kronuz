@@ -1,51 +1,70 @@
 [
-    {
-        "id": "tools",
-        "children": [
-            {
-                "id": "text-marker",
-                "caption": "Text Marker",
-                "children": [
-                    {
-                        "caption": "Text Marker",
-                        "command": "text_marker",
-                        "mnemonic": "C",
-                        "checkbox": true
-                    },
-                    {
-                        "caption": "Restore color scheme",
-                        "command": "text_marker_restore",
-                        "mnemonic": "S"
-                    },
-                    {
-                        "caption": "Reset Text Marker",
-                        "command": "text_marker_reset",
-                        "mnemonic": "R"
-                    }
-                ]
-            }
+  {
+    "id": "tools",
+    "children":
+    [
+      {
+        "id": "text-marker",
+        "caption": "Text Marker",
+        "children":
+        [
+          {
+            "caption": "Text Marker",
+            "command": "text_marker",
+            "mnemonic": "M",
+            "checkbox": true
+          },
+          {
+            "caption": "Restore color scheme",
+            "command": "text_marker_restore",
+            "mnemonic": "s"
+          },
+          {
+            "caption": "Reset Text Marker",
+            "command": "text_marker_reset",
+            "mnemonic": "R"
+          }
         ]
-    },
-    {
-        "id": "preferences",
-        "caption": "Preferences",
-        "mnemonic": "n",
-        "children": [
-            {
-                "id": "package-settings",
-                "caption": "Package Settings",
-                "mnemonic": "P",
-                "children": [
-                    {
-                        "caption": "Text Marker Settings",
-                        "command": "edit_settings",
-                        "args": {
-                            "base_file": "${packages}/Text Marker/Text Marker.sublime-settings",
-                            "default": "/*\n\tText Marker user settings in here override the default\n*/\n{\n\t\"user\": {\n\t\t$0\n\t}\n}\n"
-                        }
-                    }
-                ]
-            }
+      }
+    ]
+  },
+  {
+    "id": "preferences",
+    "caption": "Preferences",
+    "mnemonic": "n",
+    "children":
+    [
+      {
+        "id": "package-settings",
+        "caption": "Package Settings",
+        "mnemonic": "P",
+        "children":
+        [
+          {
+            "caption": "Text Marker",
+            "children":
+            [
+              {
+                "caption": "Key Bindings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/Text Marker/Default.sublime-keymap",
+                  "default": "[\n\t$0\n]\n"
+                }
+              },
+              {
+                "caption": "Settings",
+                "command": "edit_settings",
+                "args":
+                {
+                  "base_file": "${packages}/Text Marker/Text Marker.sublime-settings",
+                  "default": "/*\n\tText Marker user settings in here override the default\n*/\n{\n\t\"user\": {\n\t\t$0\n\t}\n}\n"
+                }
+              }
+            ]
+          }
         ]
-    }
+      }
+    ]
+  }
 ]

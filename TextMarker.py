@@ -23,7 +23,7 @@ def regex_escape(string):
     return string
 
 def is_whitespace(string):
-	return (not string or string.isspace())
+    return (not string or string.isspace())
 
 def highlight(view, color=None, min_length=4, when_selection_is_empty=False, when_whitespace=False, add_selections=False, prefix='wh_'):
     view_settings = view.settings()
@@ -66,7 +66,7 @@ def highlight(view, color=None, min_length=4, when_selection_is_empty=False, whe
             # If selection is a point...
             if when_selection_is_empty:
                 string = view.substr(view.word(sel))
-                if string and any(c not in word_separators for c in string):
+                if string and all(c not in word_separators for c in string):
                     regions.extend(view.find_all(r'\b%s\b' % regex_escape(string)))
 
     if not regions and len(view_sel) > 1:
